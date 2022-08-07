@@ -16,6 +16,7 @@ class Homepagepostcodeunittest(unittest.TestCase):
         driver.get("https://bystored.com")
         pst = enterpostcode(driver)
         pst.post_code_value("BN9")
+        print("postcode")
         pst.get_a_quote_click()
         time.sleep(10)
         pst.popup_click()

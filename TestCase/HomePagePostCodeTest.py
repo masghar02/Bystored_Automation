@@ -2,7 +2,7 @@ import time
 import unittest
 from selenium import webdriver
 from Pages.HomePagePostCode import enterpostcode
-from Pages.CloseBooking1popupmodule import close_popup_class
+from Pages.ICloseBooking1popupmodule import close_popup_class
 
 class Homepagepostcodeunittest(unittest.TestCase):
     @classmethod
@@ -11,27 +11,27 @@ class Homepagepostcodeunittest(unittest.TestCase):
         cls.driver.maximize_window()
         # cls.driver.implicitly_wait(1000)
 
-    def test_enter_postcode(self):
+    def test_1_enter_postcode(self):
         driver = self.driver
         driver.get("https://bystored.com")
         pst = enterpostcode(driver)
         pst.post_code_value("BN9")
-        # print("postcode")
         pst.get_a_quote_click()
         time.sleep(5)
-        # popup = close_popup_class(driver)
-        # popup.popup_click()
-       # pst.popup_click()
+        pst.popup_click()
+        time.sleep(2)
+        pst.popup_click_skip()
 
-    def test_close_popup(self):
-        driver = self.driver
-        driver.get("https://www.bystored.com/booking/1")
-        p = close_popup_class(driver)
-        p.popup_click()
-        p.popup_click_skip()
+
+    # def test_2_close_popup(self):
+    #     driver = self.driver
+    #
+    #     p = close_popup_class(driver)
+    #     p.popup_click()
+    #     p.popup_click_skip()
 
     @classmethod
-    def tearDownClass(close):
+    def tearDown(close):
         time.sleep(10)
         close.driver.close()
         close.driver.quit()

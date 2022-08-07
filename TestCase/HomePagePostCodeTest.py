@@ -13,7 +13,7 @@ class Homepagepostcodeunittest(unittest.TestCase):
 
     def test_1_enter_postcode(self):
         driver = self.driver
-        driver.get("https://bystored.com")
+        driver.get("https://bystored:bystored2020@stage.bystored.com")
         pst = enterpostcode(driver)
         pst.post_code_value("BN9")
         pst.get_a_quote_click()
@@ -50,11 +50,13 @@ class Homepagepostcodeunittest(unittest.TestCase):
         time.sleep(5)
         pst.step2_click()
         time.sleep(5)
-        pst.name_val("Asghar QA Test")
+        pst.name_val("Test")
         time.sleep(2)
-        pst.email_val("asgharteste@bys.uk")
+        pst.email_val("atetes@bys.uk")
         time.sleep(2)
         pst.phone_val("7410852963")
+        time.sleep(2)
+        pst.step_3_click()
 
 
 

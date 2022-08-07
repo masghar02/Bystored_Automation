@@ -21,3 +21,4 @@ class Locators():
     name_lc = "name"
     email_lc = "email"
     phone_lc = "customerPhone"
+    step_3_btn = "v-35-step3-cta-next"

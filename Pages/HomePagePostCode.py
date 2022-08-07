@@ -1,4 +1,4 @@
-from Pages.Locators.Locators import Locators
+from Locators.Locators import Locators
 from selenium.webdriver.common.by import By
 
 class enterpostcode():
@@ -12,11 +12,11 @@ class enterpostcode():
 
 
     def post_code_value(self, postcode):
-        self.driver.find_element_by_id(self.postcode_id).clear()
-        self.driver.find_element_by_id(self.postcode_id).send_keys(postcode)
+        self.driver.find_element(By.ID, self.postcode_id).clear()
+        self.driver.find_element(By.ID, self.postcode_id).send_keys(postcode)
 
     def get_a_quote_click(self):
-        self.driver.find_element_by_id(self.get_a_quote_id).click()
+        self.driver.find_element(By.ID, self.get_a_quote_id).click()
 
 
     def popup_click(self):

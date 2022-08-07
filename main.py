@@ -1,19 +1,9 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+from selenium import  webdriver
+from selenium.webdriver.common.by import By
+from  selenium.webdriver.common.keys import Keys
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+driver = webdriver.Chrome(executable_path=
+                          'C:/Users/HP/AppData/Local/Programs/Python/Python310/chromedriver.exe')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
-
-print("asghar")
-print("Python")
+driver.get("https://google.com")

@@ -57,6 +57,7 @@ class Homepagepostcodeunittest(unittest.TestCase):
         pst.phone_val("7410852963")
         time.sleep(2)
         pst.step_3_click()
+        time.sleep(2)
 
 
 

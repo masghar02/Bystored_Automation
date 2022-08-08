@@ -29,6 +29,8 @@ class enterpostcode():
         self.email = Locators.email_lc
         self.phone = Locators.phone_lc
         self.step3 = Locators.step_3_btn
+        self.profile = Locators.profile_lc
+        self.logout = Locators.logout_lc
 
 
     def post_code_value(self, postcode):
@@ -99,3 +101,8 @@ class enterpostcode():
     def step_3_click(self):
         self.driver.find_element(By.ID, self.step3).click()
 
+    def profile_click(self):
+        self.driver.find_element(By.XPATH, self.profile).perform()
+
+    def logout_click(self):
+        self.driver.find_element(By.XPATH, self.logout).click()

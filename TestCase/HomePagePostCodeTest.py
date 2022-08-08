@@ -1,6 +1,9 @@
 import time
 import unittest
 from selenium import webdriver
+from selenium.webdriver import ActionChains
+from selenium.webdriver.common.by import By
+
 from Pages.HomePagePostCode import enterpostcode
 from Pages.ICloseBooking1popupmodule import close_popup_class
 
@@ -14,7 +17,11 @@ class Homepagepostcodeunittest(unittest.TestCase):
     def test_1_enter_postcode(self):
         driver = self.driver
         driver.get("https://bystored:bystored2020@stage.bystored.com")
+        # time.sleep(2)
+        # driver.execute_script("window.scrollTo(0,600)")
+        # driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
         pst = enterpostcode(driver)
+        time.sleep(5)
         pst.post_code_value("BN9")
         pst.get_a_quote_click()
         time.sleep(10)
@@ -52,12 +59,19 @@ class Homepagepostcodeunittest(unittest.TestCase):
         time.sleep(5)
         pst.name_val("Test")
         time.sleep(2)
-        pst.email_val("atetes@bys.uk")
+        pst.email_val("atetepay@bys.uk")
+        # if pst.email =='exist'
         time.sleep(2)
         pst.phone_val("7410852963")
         time.sleep(2)
         pst.step_3_click()
-        time.sleep(2)
+        time.sleep(5)
+        achain = ActionChains(driver)
+        profile = driver.find_element(By.XPATH, "//body/div[4]/ul[1]/li[4]")
+        achain.move_to_element(profile).perform()
+        time.sleep(5)
+        pst.logout_click()
+
 
 
 

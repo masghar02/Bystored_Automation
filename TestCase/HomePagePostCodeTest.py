@@ -6,6 +6,8 @@ from selenium.webdriver.common.by import By
 
 from Pages.HomePagePostCode import enterpostcode
 from Pages.ICloseBooking1popupmodule import close_popup_class
+from Pages.Login import Logout
+
 
 class Homepagepostcodeunittest(unittest.TestCase):
     @classmethod
@@ -23,6 +25,7 @@ class Homepagepostcodeunittest(unittest.TestCase):
         pst = enterpostcode(driver)
         time.sleep(5)
         pst.post_code_value("BN9")
+        time.sleep(2)
         pst.get_a_quote_click()
         time.sleep(10)
         pst.popup_click()
@@ -59,7 +62,7 @@ class Homepagepostcodeunittest(unittest.TestCase):
         time.sleep(5)
         pst.name_val("Test")
         time.sleep(2)
-        pst.email_val("atetepay@bys.uk")
+        pst.email_val("atetepawy@bys.uk")
         # if pst.email =='exist'
         time.sleep(2)
         pst.phone_val("7410852963")
@@ -72,20 +75,24 @@ class Homepagepostcodeunittest(unittest.TestCase):
         time.sleep(5)
         pst.logout_click()
 
-
-
-
-
-    # def test_2_close_popup(self):
-    #     driver = self.driver
-    #
-    #     p = close_popup_class(driver)
-    #     p.popup_click()
-    #     p.popup_click_skip()
+    def test_2_login(self):
+        driver = self.driver
+        driver.get("https://bystored:bystored2020@stage.bystored.com/login")
+        login = Logout(driver)
+        driver.implicitly_wait(10000)
+        login.loginemail_text("asgharqatest223@bystored.com")
+        login.loginpass_text("12345")
+        login.loginbtn_click()
+        time.sleep(5)
+        logout = enterpostcode(driver)
+        achain = ActionChains(driver)
+        profile = driver.find_element(By.XPATH, "//body/div[4]/ul[1]/li[4]")
+        achain.move_to_element(profile).perform()
+        time.sleep(5)
+        logout.logout_click()
 
     @classmethod
     def tearDown(close):
         time.sleep(10)
         close.driver.close()
         close.driver.quit()
-

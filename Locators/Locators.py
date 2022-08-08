@@ -24,3 +24,6 @@ class Locators():
     step_3_btn = "v-35-step3-cta-next"
     profile_lc = "//body/div[4]/ul[1]/li[4]"
     logout_lc = "//span[contains(text(),'Logout')]"
+    loginemail_lc = "email"
+    loginpass_lc = "password"
+    logintbn_lc = "btnLoginSubmit"

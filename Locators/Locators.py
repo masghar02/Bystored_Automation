@@ -10,7 +10,7 @@ class Locators:
     step_2_pc_address_line1_loc = "//body[1]/main[1]/div[1]/div[3]/div[1]/form[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]"
     step_2_pc_address_line2_loc = "//body[1]/main[1]/div[1]/div[3]/div[1]/form[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]"
     month_drop_lc = "selectedInquiryDiv"
-    month_drop_val_lc = "//li[@id='47']"
+    month_drop_val_lc = "//li[@id='46']"
     pick_up_date_lc = "opener"
     date_select_lc = "//a[contains(text(),'15')]"
     time_select_lc = "//body/main[1]/div[1]/div[3]/div[1]/form[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/li[3]/label[1]"

@@ -9,6 +9,8 @@ from Pages.Homepage import enterpostcode
 from Pages.Login import Logout
 
 
+
+
 class Bystoredunittesting(unittest.TestCase):
     @classmethod
     def setUp(cls):
@@ -18,7 +20,7 @@ class Bystoredunittesting(unittest.TestCase):
 
     def test_1_enter_postcode(self):
         driver = self.driver
-        driver.get("https://bystored:bystored2020@stage.bystored.com")
+        driver.get("https://bystored:bystored2020@dev.bystored.com")
         # driver.get("https://bystored.com")
         # time.sleep(2)
         # driver.execute_script("window.scrollTo(0,600)")
@@ -63,13 +65,14 @@ class Bystoredunittesting(unittest.TestCase):
         time.sleep(5)
         pst.name_val("Test")
         time.sleep(2)
-        pst.email_val("asgharautomate@bys.uk")
+        pst.email_val("asgharautomate1_2@bys.uk")
+        # isExists = pst.email_val('asgharautomate_1@bys.uk', verify=True)
         # if pst.email =='exist'
         time.sleep(2)
         pst.phone_val("7410852963")
         time.sleep(2)
         pst.step_3_click()
-        time.sleep(5)
+        time.sleep(10)
         achain = ActionChains(driver)
         profile = driver.find_element(By.XPATH, "//body/div[4]/ul[1]/li[4]")
         achain.move_to_element(profile).perform()

@@ -57,13 +57,13 @@ class Bystoredunittesting(unittest.TestCase):
         time.sleep(5)
         # pst.packing_assistance_click()
         # time.sleep(5)
-        pst.discount_code_click("Scape")
+        # pst.discount_code_click("Scape")
         time.sleep(5)
         pst.step2_click()
         time.sleep(5)
         pst.name_val("Test")
         time.sleep(2)
-        pst.email_val("atetepawy@bys.uk")
+        pst.email_val("asgharautomate@bys.uk")
         # if pst.email =='exist'
         time.sleep(2)
         pst.phone_val("7410852963")
@@ -73,7 +73,7 @@ class Bystoredunittesting(unittest.TestCase):
         achain = ActionChains(driver)
         profile = driver.find_element(By.XPATH, "//body/div[4]/ul[1]/li[4]")
         achain.move_to_element(profile).perform()
-        time.sleep(5)
+        time.sleep(10)
         pst.logout_click()
 
     def test_2_login(self):

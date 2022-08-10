@@ -12,7 +12,7 @@ class Locators:
     month_drop_lc = "selectedInquiryDiv"
     month_drop_val_lc = "//li[@id='47']"
     pick_up_date_lc = "opener"
-    date_select_lc = "//a[contains(text(),'11')]"
+    date_select_lc = "//a[contains(text(),'15')]"
     time_select_lc = "//body/main[1]/div[1]/div[3]/div[1]/form[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/li[3]/label[1]"
     save_time_date_lc ="tslotSaveBtn"
     packing_assistance_lc = "packingAssistance"

@@ -30,4 +30,4 @@ class Locators:
     logintbn_lc = "btnLoginSubmit"
     click_profile = "//body/div[4]/ul[1]/li[4]/div[2]/a[1]"
     profile_setting = "//span[contains(text(),'Account settings')]"
-    packing_material_bundle="b1"
+    packing_material_bundle="b12"

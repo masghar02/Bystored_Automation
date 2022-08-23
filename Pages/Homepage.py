@@ -1,5 +1,7 @@
 from _ast import List
 
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from Locators.Locators import Locators
 from selenium.webdriver.common.by import By
 
@@ -25,12 +27,15 @@ class enterpostcode():
         self.packing_assistance = Locators.packing_assistance_lc
         self.discount_code = Locators.discount_code_lc
         self.step2_click_btn = Locators.cont2_click_lc
+        self.packing_material_skip = Locators.skip_step3_lc
         self.name = Locators.name_lc
         self.email = Locators.email_lc
         self.phone = Locators.phone_lc
         self.step3 = Locators.step_3_btn
         self.profile = Locators.profile_lc
         self.logout = Locators.logout_lc
+        self.profile_click = Locators.click_profile
+        self.profile_setting = Locators.profile_setting
 
 
     def post_code_value(self, postcode):
@@ -46,6 +51,7 @@ class enterpostcode():
         # self.driver.find_element_by_id(self.close_popup_nxt1).click()
     def popup_click_skip(self):
          self.driver.find_element(By.ID, self.close_popup_id).click()
+
 
     def sq_ft_click(self):
         self.driver.find_element(By.XPATH, self.sq_ft_size).click()
@@ -80,8 +86,8 @@ class enterpostcode():
     def save_date_time_sel_click(self):
         self.driver.find_element(By.ID, self.save_date_time_sel).click()
 
-    # def packing_assistance_click(self):
-    #     self.driver.find_element(By.ID, self.packing_assistance).click()
+    def packing_assistance_click(self):
+        self.driver.find_element(By.XPATH, self.packing_assistance).click()
 
     def discount_code_click(self, discount):
         self.driver.find_element(By.ID, self.discount_code).send_keys(discount)
@@ -104,5 +110,14 @@ class enterpostcode():
     def profile_click(self):
         self.driver.find_element(By.XPATH, self.profile).perform()
 
+    def click_profile(self):
+        self.driver.find_element(By.XPATH, self.profile_click).click()
+
+    def profile_setting(self):
+        self.driver.find_element(By.XPATH, self.profile_setting).click()
+
     def logout_click(self):
         self.driver.find_element(By.XPATH, self.logout).click()
+
+    def skip_packing_material_click(self):
+        self.driver.find_element(By.ID, self.packing_material_skip).click()

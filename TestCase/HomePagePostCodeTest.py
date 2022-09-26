@@ -82,15 +82,16 @@ class Bystoredunittesting(unittest.TestCase):
         # driver.implicitly_wait(30000)
         pst.step2_click()
         time.sleep(5)
+        pst.skip_packing_material_click()
 
+        driver.implicitly_wait(10000)
+        pst.name_val("Asghar")
+        driver.implicitly_wait(10000)
         # driver.implicitly_wait(30000)
-        pst.name_val("Asghar 12")
-        time.sleep(5)
-        # driver.implicitly_wait(30000)
-        pst.email_val("asgharpromo2@bys.uk")
+        pst.email_val("asgharprkco2@bys.uk")
         # isExists = pst.email_val('asgharautomate_1@bys.uk', verify=True)
         # if pst.email =='exist'
-        time.sleep(5)
+        driver.implicitly_wait(10000)
         # driver.implicitly_wait(30000)
         pst.phone_val("7410852963")
         time.sleep(5)
@@ -172,6 +173,9 @@ class Bystoredunittesting(unittest.TestCase):
         pst.click_profile()
         time.sleep(5)
         pst.profile_setting()
+
+        time.sleep(5)
+        pst.logout_click()
 
     @classmethod
     def tearDown(close):

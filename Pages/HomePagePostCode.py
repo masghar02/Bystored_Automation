@@ -38,6 +38,7 @@ class enterpostcode():
         self.profile_setting = Locators.profile_setting
 
 
+
     def post_code_value(self, postcode):
         self.driver.find_element(By.ID, self.postcode_id).clear()
         self.driver.find_element(By.ID, self.postcode_id).send_keys(postcode)
@@ -120,4 +121,4 @@ class enterpostcode():
         self.driver.find_element(By.XPATH, self.logout).click()
 
     def skip_packing_material_click(self):
-        self.driver.find_element(By.ID, self.packing_material_skip).click()
+        self.driver.find_element(By.XPATH, self.packing_material_skip).click()
